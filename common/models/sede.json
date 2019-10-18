@@ -1,0 +1,40 @@
+{
+  "name": "sede",
+  "plural": "sedes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "latitud": {
+      "type": "string",
+      "required": true
+    },
+    "longitud": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "oficinas": {
+      "type": "hasMany",
+      "model": "oficina",
+      "foreignKey": "sedeId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

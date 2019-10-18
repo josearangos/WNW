@@ -1,0 +1,46 @@
+{
+  "name": "oficina",
+  "plural": "oficinas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sedeId": {
+      "type": "number",
+      "required": true
+    },
+    "capacidad": {
+      "type": "number",
+      "required": true
+    },
+    "espacioUsado": {
+      "type": "number",
+      "required": true
+    },
+    "estado": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sede": {
+      "type": "belongsTo",
+      "model": "sede",
+      "foreignKey": "sedeId"
+    },
+    "personas": {
+      "type": "hasMany",
+      "model": "persona",
+      "foreignKey": "oficinaId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

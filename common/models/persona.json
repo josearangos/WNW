@@ -1,0 +1,57 @@
+{
+  "name": "persona",
+  "plural": "personas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "oficinaId": {
+      "type": "number",
+      "required": true
+    },
+    "equipoId": {
+      "type": "number",
+      "required": true
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "latitud": {
+      "type": "string",
+      "required": true
+    },
+    "longitud": {
+      "type": "string",
+      "required": true
+    },
+    "cedula": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "oficina": {
+      "type": "belongsTo",
+      "model": "oficina",
+      "foreignKey": "oficinaId"
+    },
+    "equipo": {
+      "type": "belongsTo",
+      "model": "equipo",
+      "foreignKey": "equipoId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

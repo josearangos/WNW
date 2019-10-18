@@ -1,0 +1,43 @@
+{
+  "name": "equipo",
+  "plural": "equipos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "empresaId": {
+      "type": "number",
+      "required": true
+    },
+    "juntos": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "privado": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "personas": {
+      "type": "hasMany",
+      "model": "persona",
+      "foreignKey": "equipoId"
+    },
+    "empresa": {
+      "type": "belongsTo",
+      "model": "empresa",
+      "foreignKey": "empresaId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

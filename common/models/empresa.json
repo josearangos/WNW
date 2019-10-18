@@ -1,0 +1,44 @@
+{
+  "name": "empresa",
+  "plural": "empresas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nit": {
+      "type": "string",
+      "required": true
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "latitud": {
+      "type": "string",
+      "required": true
+    },
+    "longitud": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "equipos": {
+      "type": "hasMany",
+      "model": "equipo",
+      "foreignKey": "empresaId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
