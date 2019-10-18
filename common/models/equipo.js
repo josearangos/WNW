@@ -20,6 +20,8 @@ module.exports = function(Equipo) {
         let Sede = app.models.Sede;
         let sedes = await Sede.find({})
 
+        console.log(sedes)
+
         users.forEach(user => {
             origins += `${user.latitud},${user.longitud}|`
         });
@@ -70,23 +72,23 @@ module.exports = function(Equipo) {
 
             callback(null, myRes)
         } else {
-            for (let i = 0; i < _rows; i++) {
-                let row = rows[i].elements;
-                let _columns = row.length;
+            // for (let i = 0; i < _rows; i++) {
+            //     let row = rows[i].elements;
+            //     let _columns = row.length;
 
-                let minDistance = row[0].distance.value
-                let minIndex = 0;
-                console.log(minDistance)
+            //     let minDistance = row[0].distance.value
+            //     let minIndex = 0;
+            //     console.log(minDistance)
 
-                for (let j = 0; j < _columns; j++) {
-                    let actualDistance = row[i].distance.value;
-                    if (actualDistance < minDistance) {
-                        minDistance = actualDistance;
-                        minIndex = j;
-                    }
-                }
-                mejoresSedes.push(minIndex)
-            } 
+            //     for (let j = 0; j < _columns; j++) {
+            //         let actualDistance = row[i].distance.value;
+            //         if (actualDistance < minDistance) {
+            //             minDistance = actualDistance;
+            //             minIndex = j;
+            //         }
+            //     }
+            //     mejoresSedes.push(minIndex)
+            // } 
         }
 
         // fetch(query).then((res) => {
