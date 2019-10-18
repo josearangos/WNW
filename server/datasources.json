@@ -4,17 +4,3 @@
     "connector": "memory"
   }
 }
-
-// {
-//   "mydb": {
-//   "name": "mydb",
-//   "connector": "postgresql",
-//   "host": "mydbhost",
-//   "port": 5432,
-//   "url": "postgres://admin:admin@mydbhost:5432/db1?ssl=false",
-//   "database": "db1",
-//   "password": "admin",
-//   "user": "admin",
-//   "ssl": false
-//   }
-// }

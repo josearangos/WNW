@@ -3,6 +3,7 @@
 module.exports = function(Equipo) {
     Equipo.asignarSede = function (users) {
         console.log(users);
+        const office = users[0].equipoId
         
 
     }
