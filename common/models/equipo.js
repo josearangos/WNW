@@ -35,6 +35,8 @@ module.exports = function(Equipo) {
 
         const query = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${origins}&destinations=${destinations}&key=${API_KEY}`
 
+        console.log(query);
+        
         let distances = await fetch(query)
         distances = await distances.json()
         let rows = distances.rows
@@ -67,7 +69,7 @@ module.exports = function(Equipo) {
             let myRes = []
 
             for (let i = 0; i < mejoresSedes.length; i++) {
-                myRes.push(distances.destination_addresses[mejoresSedes[i]])
+                myRes.push(sedes[mejoresSedes[i]])
             }
 
             callback(null, myRes)
