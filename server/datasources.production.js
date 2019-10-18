@@ -3,4 +3,5 @@ module.exports = {
     url: process.env.DATABASE_URL,
     connector: "postgresql"
   }
+  
 };

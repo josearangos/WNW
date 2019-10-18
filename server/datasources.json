@@ -1,6 +1,13 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "postgresql",
+    "host": "ec2-174-129-43-40.compute-1.amazonaws.com",
+    "port": 5432,
+    "url": "postgres://agbxpxlmjotezk:c82caa0e99c36a25b608c4e0af1c651170b1c399e7c211959c9b4f1c58059fbc@ec2-174-129-43-40.compute-1.amazonaws.com:5432/d4d014jenv3991",
+    "database": "d4d014jenv3991",
+    "password": "c82caa0e99c36a25b608c4e0af1c651170b1c399e7c211959c9b4f1c58059fbc",
+    "user": "agbxpxlmjotezk",
+    "ssl": true
   }
 }
