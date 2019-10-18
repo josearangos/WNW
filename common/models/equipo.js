@@ -51,7 +51,7 @@ module.exports = function(Equipo) {
                 console.log(minDistance)
 
                 for (let j = 0; j < _columns; j++) {
-                    let actualDistance = row[i].distance.value;
+                    let actualDistance = row[j].distance.value;
                     if (actualDistance < minDistance) {
                         minDistance = actualDistance;
                         minIndex = j;
@@ -69,6 +69,24 @@ module.exports = function(Equipo) {
             }
 
             callback(null, myRes)
+        } else {
+            for (let i = 0; i < _rows; i++) {
+                let row = rows[i].elements;
+                let _columns = row.length;
+
+                let minDistance = row[0].distance.value
+                let minIndex = 0;
+                console.log(minDistance)
+
+                for (let j = 0; j < _columns; j++) {
+                    let actualDistance = row[i].distance.value;
+                    if (actualDistance < minDistance) {
+                        minDistance = actualDistance;
+                        minIndex = j;
+                    }
+                }
+                mejoresSedes.push(minIndex)
+            } 
         }
 
         // fetch(query).then((res) => {
