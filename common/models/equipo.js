@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(Equipo) {
-    Equipo.asignarSede = (users) => {
+    Equipo.asignarSede = function (users) {
         console.log(users);
         
 
@@ -9,12 +9,13 @@ module.exports = function(Equipo) {
 
     Equipo.remoteMethod('asignarSede', {
         http: {
-            path: '/asignar-sede',
+            path: '/asignar',
             verb: 'post'
         },
         accepts: [
             { arg: 'users', type: 'array' }
-        ]
+        ],
+        returns: [{arg: 'jeje', type: 'string'}]
     })
 
 };
